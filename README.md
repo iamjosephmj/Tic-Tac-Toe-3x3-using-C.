@@ -4,7 +4,7 @@ Tic-tac-toe (also known as noughts and crosses or Xs and Os) is a paper-and-penc
 
 HOW TO PLAY
 -----------
-The board is having the indices as show in the below diagram.
+The board is having the indices as show in the below.
 
 [1][1]     [1][2]     [1][3]
 
