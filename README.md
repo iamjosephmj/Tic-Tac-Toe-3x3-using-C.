@@ -5,11 +5,11 @@ Tic-tac-toe (also known as noughts and crosses or Xs and Os) is a paper-and-penc
 HOW TO PLAY
 -----------
 
-[1][1]  [1][2]  [1][3]
+[1][1]     [1][2]     [1][3]
 
-[2][1]  [2][2]  [2][3]
+[2][1]     [2][2]     [2][3]
 
-[3][1]  [3][2]  [3][3]
+[3][1]     [3][2]     [3][3]
 
 
 --> The user will be setting mode:
