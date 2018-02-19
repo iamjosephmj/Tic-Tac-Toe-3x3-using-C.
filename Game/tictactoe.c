@@ -9,6 +9,7 @@ int match_moves_left = 0;
 
 struct xo_board {
     char rows[3][3];
+    int profile;
 
 } board;
 
@@ -161,31 +162,40 @@ bool move_on_wise(int mode, int function) {
     int i, j, irri = 0, irry = 0, temp;
     for (i = 0; i < 3; i++) {
         temp = 0;
-        for (j = 2; j >= 0; j--) {
+        for (j = 0; j < 3; j++) {
             if (board.rows[i][j] == '-') {
+                temp += 1;
+                if (temp == 2 && board.profile == 1) {
+                    make_move(irri, irry, mode_value_finder(function, (char) mode));
+                    return true;
+                }
                 irri = i;
                 irry = j;
-                temp += 1;
+                if (temp == 2 && board.profile == 0) {
+                    make_move(irri, irry, mode_value_finder(function, (char) mode));
+                    return true;
+                }
             }
-        }
-        if (temp == 2) {
-            make_move(irri, irry, mode_value_finder(function, (char) mode));
-            return true;
         }
     }
     for (i = 0; i < 3; i++) {
         temp = 0;
-        for (j = 2; j >= 0; j--) {
+        for (j = 0; j < 3; j++) {
             if (board.rows[j][i] == '-') {
                 temp += 1;
+                if (temp == 2 && board.profile == 1) {
+                    make_move(irri, irry, mode_value_finder(function, (char) mode));
+                    return true;
+                }
                 irri = j;
                 irry = i;
+                if (temp == 2 && board.profile == 0) {
+                    make_move(irri, irry, mode_value_finder(function, (char) mode));
+                    return true;
+                }
             }
         }
-        if (temp == 2) {
-            make_move(irri, irry, mode_value_finder(function, (char) mode));
-            return true;
-        }
+
     }
     return false;
 }
@@ -379,9 +389,11 @@ void main() {
     setup_board();
     switch (i) {
         case PROFILE1:
+            board.profile = 0;
             profile_start_user();
             break;
         case PROFILE2:
+            board.profile = 1;
             profile_start_computer();
             break;
         default:
