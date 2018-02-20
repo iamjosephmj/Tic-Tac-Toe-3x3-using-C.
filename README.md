@@ -6,15 +6,17 @@ HOW TO PLAY
 -----------
 The board is having the indices as show in the below.
 
+```
 [1][1]     [1][2]     [1][3]
 
 [2][1]     [2][2]     [2][3]
 
 [3][1]     [3][2]     [3][3]
+```
 
-
---> The user will be setting mode:
+- The user will asked to select any one of the modes:
 1) CPU takes first game 
+or
 2) User takes first game.
 
---> The user will be asked to enter 'X' or 'O' on the board using [row][colum] positioning.
+- The user will be asked to enter 'X' or 'O' on the board using [row][colum] positioning.
